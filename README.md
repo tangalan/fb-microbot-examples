@@ -51,4 +51,10 @@ FB_WEBHOOK_VERIFY_TOKEN=
 On heroku, not setting FB_WEBHOOK_PORT will cause the bot to auto acquire $PORT
 
 
+### TODO
 
+A few ideas of what could be added:
+
+* Implement url redirection to allow deep linking into the workplace app
+* Generate PDF of post and QR code ready for printing and send via workchat
+* Schedule generated QRs for deletion as they are not needed after the post has been published  

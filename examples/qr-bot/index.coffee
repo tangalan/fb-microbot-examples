@@ -14,10 +14,10 @@ hash = (x) -> crypto.createHash('sha1').update(x, 'utf8').digest('hex')         
 
 bot = new MicroBot config
   .subscribe [ {type: 'page', fields: 'mention'}]                                     # -- Subscribe to mention webhook
-  .addEventFilter new MicroBot.Filters.MentionEventFilter('mention', verb: 'add')     # -- Fire a 'mention' event for mentions
+  .addEventFilter new MicroBot.Filters.MentionEventFilter('mention', verb: 'add')     # -- Fire a 'mention' adds
 
-bot.on 'mention', (mention) ->                                                        # -- Handle 'mention' event we subscribed to above
 
+bot.on 'mention', (mention) ->                                                        # -- Handle 'mention'
   try
     permalink = await bot.send bot.graph.post.getPermalink mention.post_id
     filename = hash permalink + '.png'
@@ -37,4 +37,4 @@ bot.on 'mention', (mention) ->                                                  
 bot.on 'started', ->                                                           # -- Fired when the bot has started up
   console.log 'started'
 
-bot.listen()
+bot.listen()                                                                   # -- start the bot
