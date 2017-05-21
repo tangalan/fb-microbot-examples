@@ -1,0 +1,24 @@
+{
+  "name": "fb-qr-microbot",
+  "version": "1.0.0",
+  "description": "A small workplace bot that allows creation of QR codes",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "env-cmd ./.env.local node --harmony dist/index.js",
+    "build": "./node_modules/.bin/coffee -o dist -c .",
+    "coffeelint": "./node_modules/.bin/coffeelint -c .",
+    "lint": "./node_modules/.bin/eslint -f table --cache dist"
+  },
+  "author": "georgzoeller",
+  "license": "ISC",
+  "dependencies": {
+    "debug": "^2.6.8",
+    "env-cmd": "^5.1.0",
+    "fb-microbot-base": "georgzoeller/fb-microbot-base",
+    "qr-image": "^3.2.0"
+  },
+  "devDependencies": {
+    "coffeelint": "^1.16.0",
+    "coffeescript": "jashkenas/coffeescript#2"
+  }
+}
