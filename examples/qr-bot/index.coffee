@@ -4,7 +4,7 @@
 # --------------------------------------------------------------------------------------------------------
 
 MicroBot = require 'fb-microbot-base'                                          # -- Use microbot template
-config   = {name: 'QR ot', graphVersion: '2.8', staticPath: 'www/'}            # -- Set bot config to graph api 2.8,
+config   = {name: 'QRBot', graphVersion: '2.8', staticPath: 'www/'}            # -- Set bot config to graph api 2.8,
                                                                                #    serving static files from www/
 fs        = require 'fs'
 qr        = require 'qr-image'

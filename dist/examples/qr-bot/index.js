@@ -5,7 +5,7 @@
   MicroBot = require('fb-microbot-base');
 
   config = {
-    name: 'QR ot',
+    name: 'QRBot',
     graphVersion: '2.8',
     staticPath: 'www/'
   };

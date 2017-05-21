@@ -35,7 +35,7 @@ Clone the repository via git
 git clone georgzoeller/fb-qr-microbot
 ```
 
-The following environment variables need to be set or added to a file called ```.env.local``` in the apps root director
+The following environment variables need to be set or added to a file called ```.env.local``` (do NOT add them to .env!) in the apps root director
 
 The values for these fields can be found in the integrations dashboard
 
