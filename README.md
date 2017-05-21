@@ -1,13 +1,13 @@
-# fb-microbot-example
+# fb-microbot-examples
 
 Repository for example [Workplace By Facebook](https://work.fb.com) bots built using the [fb-microbot-base](https://github.com/georgzoeller/fb-microbot-base) framework.
 
 
-
-
 ## 1. QR Bot
 
-```examples/qr-bot```
+```
+examples/qr-bot
+```
 
 A simple bot which, upon being @mentioned in a comment, will comment on the post with a QR code for it's permalink
 
@@ -15,15 +15,21 @@ A simple bot which, upon being @mentioned in a comment, will comment on the post
 
 Office Printouts linking to workplace, driving attention to important topics in email-less environments, etc..
 
-[docs/img/qr_bot_1.png]
+
+## Usage 
+
+[https://github.com/georgzoeller/fb-microbot-examples/blob/master/docs/img/qr_bot_1.png?raw=true]
+
+[https://github.com/georgzoeller/fb-microbot-examples/blob/master/docs/img/qr_bot_2.png?raw=true]
 
 
 ### Installation
 
 Clone the repository via git
 
-```git clone georgzoeller/fb-qr-microbot```
-
+```
+git clone georgzoeller/fb-qr-microbot
+```
 
 The following environment variables need to be set or added to a file called ```.env.local``` in the apps root director
 
@@ -39,9 +45,6 @@ FB_WEBHOOK_VERIFY_TOKEN=
 ```
 
 On heroku, not setting FB_WEBHOOK_PORT will cause the bot to auto acquire $PORT
-
-
-
 
 
 
