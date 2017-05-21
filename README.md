@@ -18,9 +18,10 @@ Office Printouts linking to workplace, driving attention to important topics in 
 
 ## Usage 
 
-[1](https://github.com/georgzoeller/fb-microbot-examples/blob/master/docs/img/qr_bot_1.png?raw=true)
 
-[2](https://github.com/georgzoeller/fb-microbot-examples/blob/master/docs/img/qr_bot_2.png?raw=true)
+[1](https://raw.githubusercontent.com/georgzoeller/fb-microbot-examples/master/docs/img/qr_bot_1.png)
+
+[2](https://raw.githubusercontent.com/georgzoeller/fb-microbot-examples/master/docs/img/qr_bot_2.png)
 
 
 ### Installation
