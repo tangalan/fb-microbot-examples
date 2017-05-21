@@ -1,13 +1,12 @@
 {
-  "name": "fb-qr-microbot",
+  "name": "fb-microbot-examples",
   "version": "1.0.0",
-  "description": "A small workplace bot that allows creation of QR codes",
-  "main": "dist/index.js",
+  "description": "Example bots for Facebook Workplace using the fb-microbot-base module",
+  "main": "dist/examples/qr-bot/index.js",
   "scripts": {
-    "start": "env-cmd ./.env.local node --harmony dist/index.js",
+    "start": "env-cmd ./.env.local node --harmony dist/examples/qr-bot/index.js",
     "build": "./node_modules/.bin/coffee -o dist -c .",
-    "coffeelint": "./node_modules/.bin/coffeelint -c .",
-    "lint": "./node_modules/.bin/eslint -f table --cache dist"
+    "coffeelint": "./node_modules/.bin/coffeelint -c ."
   },
   "author": "georgzoeller",
   "license": "ISC",

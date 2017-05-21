@@ -1,13 +1,24 @@
-# QR Bot
+# fb-microbot-example
 
-A simple [Workplace By Facebook](https://work.fb.com) bot that, upon being @mentioned in a comment, will comment on the post with a QR code for it's perma link
+Repository for example [Workplace By Facebook](https://work.fb.com) bots built using the [fb-microbot-base](https://github.com/georgzoeller/fb-microbot-base) framework.
 
-## Usecase
 
-Office Printouts linking to workplace, driving attention to important topics.
 
-## Installation
 
+## 1. QR Bot
+
+```examples/qr-bot```
+
+A simple bot which, upon being @mentioned in a comment, will comment on the post with a QR code for it's permalink
+
+### Why?
+
+Office Printouts linking to workplace, driving attention to important topics in email-less environments, etc..
+
+[docs/img/qr_bot_1.png]
+
+
+### Installation
 
 Clone the repository via git
 

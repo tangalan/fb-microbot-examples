@@ -1,7 +1,6 @@
 # --------------------------------------------------------------------------------------------------------
 #  Example for a workplace / messenger bot using the MicroBot template
-#  This bot, upon being @mentioned in a comment, will respond with a QR code for the parent posts
-#  permalink
+#  This bot, upon being @mentioned in a comment, will respond with a QR code for the parent posts permalink
 # --------------------------------------------------------------------------------------------------------
 
 MicroBot = require 'fb-microbot-base'                                          # -- Use microbot template
@@ -22,9 +21,9 @@ bot.on 'mention', (mention) ->                                                  
   try
     permalink = await bot.send bot.graph.post.getPermalink mention.post_id
     filename = hash permalink + '.png'
-    link = "#{bot.host}/#{filename}"
+    link = "#{bot.host}/qr/#{filename}"
     qrCode = await qr.image(permalink, {type: 'png'})
-    output = fs.createWriteStream "www/#{filename}"
+    output = fs.createWriteStream "www/qr/#{filename}"
     qrCode.pipe output
 
     await bot.send bot.graph.comment.add mention.post_id,

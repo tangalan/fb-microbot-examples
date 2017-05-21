@@ -34,11 +34,11 @@
     try {
       permalink = (await bot.send(bot.graph.post.getPermalink(mention.post_id)));
       filename = hash(permalink + '.png');
-      link = `${bot.host}/${filename}`;
+      link = `${bot.host}/qr/${filename}`;
       qrCode = (await qr.image(permalink, {
         type: 'png'
       }));
-      output = fs.createWriteStream(`www/${filename}`);
+      output = fs.createWriteStream(`www/qr/${filename}`);
       qrCode.pipe(output);
       return (await bot.send(bot.graph.comment.add(mention.post_id, {
         message: `Hey @[${mention.sender_id}], here is your QR code linking to this post:\n`,
