@@ -8,9 +8,6 @@ config   = {name: 'QRBot', graphVersion: '2.8', staticPath: 'www/'}            #
                                                                                #    serving static files from www/
 fs        = require 'fs'
 qr        = require 'qr-image'
-crypto    = require 'crypto'
-
-hash = (x) -> crypto.createHash('sha1').update(x, 'utf8').digest('hex')               # -- Hash function for filenames
 
 bot = new MicroBot config
   .subscribe [ {type: 'page', fields: 'mention'}]                                     # -- Subscribe to mention webhook
@@ -20,11 +17,10 @@ bot = new MicroBot config
 bot.on 'mention', (mention) ->                                                        # -- Handle 'mention'
   try
     permalink = await bot.send bot.graph.post.getPermalink mention.post_id
-    filename = hash permalink + '.png'
+    filename = "#{mention.post_id}.png"                                               # -- TODO: Check if exists
     link = "#{bot.host}/qr/#{filename}"
     qrCode = await qr.image(permalink, {type: 'png'})
-    output = fs.createWriteStream "www/qr/#{filename}"
-    qrCode.pipe output
+    qrCode.pipe fs.createWriteStream "www/qr/#{filename}"
 
     await bot.send bot.graph.comment.add mention.post_id,
       message: "Hey @[#{mention.sender_id}], here is your QR code linking to this post:\n",
