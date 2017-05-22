@@ -96,3 +96,4 @@ jspm_packages
 .DS_Store
 .eslintcache
 .env.local
+www/qr/*.png
