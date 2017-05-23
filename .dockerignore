@@ -6,3 +6,4 @@ docs
 .env.local
 examples
 www/qr/*.png
+.git

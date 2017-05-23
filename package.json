@@ -6,7 +6,8 @@
   "scripts": {
     "start": "env-cmd ./.env.local node --harmony dist/examples/qr-bot/index.js",
     "build": "./node_modules/.bin/coffee -o dist -c .",
-    "coffeelint": "./node_modules/.bin/coffeelint -c ."
+    "coffeelint": "./node_modules/.bin/coffeelint -c .",
+    "dockerstart": "node --harmony dist/examples/qr-bot/index.js"
   },
   "author": "georgzoeller",
   "license": "ISC",
