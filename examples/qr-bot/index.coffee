@@ -19,7 +19,7 @@ bot.on 'mention', (mention) ->                                                  
     permalink = await bot.send bot.graph.post.getPermalink mention.post_id
     filename = "#{mention.post_id}.png"                                               # -- TODO: Check if exists
     link = "#{bot.host}/qr/#{filename}"
-    qrCode = await qr.image(permalink, {type: 'png'})
+    qrCode = await qr.image(permalink,{type: 'png'})
     qrCode.pipe fs.createWriteStream "www/qr/#{filename}"
 
     await bot.send bot.graph.comment.add mention.post_id,
