@@ -9,6 +9,9 @@
     "coffeelint": "./node_modules/.bin/coffeelint -c .",
     "dockerstart": "node --harmony dist/examples/qr-bot/index.js"
   },
+  "engines": {
+"node": ">=7.2.1"
+  },
   "author": "georgzoeller",
   "license": "ISC",
   "dependencies": {
