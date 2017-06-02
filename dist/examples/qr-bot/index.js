@@ -17,31 +17,18 @@
   bot = new MicroBot(config).subscribe([
     {
       type: 'page',
-      fields: 'mention'
+      fields: 'mention,messages'
     }
-  ]).addEventFilter(new MicroBot.Filters.MentionEventFilter('mention', {
-    verb: 'add'
-  }));
+  ]);
 
-  bot.on('mention', async function(mention) {
-    var error, filename, link, permalink, qrCode;
-    try {
-      permalink = (await bot.send(bot.graph.post.getPermalink(mention.post_id)));
-      filename = `${mention.post_id}.png`;
-      link = `${bot.host}/qr/${filename}`;
-      qrCode = (await qr.image(permalink, {
-        type: 'png'
-      }));
-      qrCode.pipe(fs.createWriteStream(`www/qr/${filename}`));
-      return (await bot.send(bot.graph.comment.add(mention.post_id, {
-        message: `Hey @[${mention.sender_id}], here is your QR code linking to this post:\n`,
-        attachment_url: link
-      })));
-    } catch (error1) {
-      error = error1;
-      console.error(error);
-      return console.trace();
-    }
+  bot.on('data', async function(payload) {
+    
+    WorkChat = bot.graph.chat;
+
+    console.log(JSON.stringify(payload));
+    return;
+    await bot.send WorkChat.sendTextMessage(JSON.stringify(payload));
+  
   });
 
   bot.on('started', function() {
