@@ -23,11 +23,11 @@
 
   bot.on('data', async function(payload) {
     
-    WorkChat = bot.graph.chat;
+    //WorkChat = bot.graph.chat;
 
     console.log(JSON.stringify(payload));
     return;
-    await bot.send WorkChat.sendTextMessage(JSON.stringify(payload));
+    //await bot.send WorkChat.sendTextMessage(JSON.stringify(payload));
   
   });
 
