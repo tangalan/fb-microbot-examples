@@ -11,6 +11,8 @@
   },
   "author": "georgzoeller",
   "license": "ISC",
+  "engines": {
+"node": ">=7.2.1"  },
   "dependencies": {
     "debug": "^2.6.8",
     "env-cmd": "^5.1.0",
